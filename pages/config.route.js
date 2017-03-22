@@ -13,7 +13,7 @@
     function getRoutes() {
         return [
             {
-                url: '/home',
+                url: '/',
                 config: {
                     templateUrl: 'pages/home.html',
                     controller: 'HomeController',
@@ -27,7 +27,7 @@
             },
 			
 			{
-                url: '/request',
+                url: '/Request',
                 config: {
                     templateUrl: 'pages/request.html',
                     controller: 'RequestController',
@@ -41,7 +41,7 @@
             },
 			
 			{
-                url: '/schedule',
+                url: '/Schedule',
                 config: {
                     templateUrl: 'pages/schedule.html',
                     controller: 'ScheduleController',

@@ -1,18 +1,18 @@
 <!doctype html>
-<html ng-app="myFirstApp" ng-strict-di>
+<html ng-app="myFirstApp">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <title data-ng-bind="title"></title>	
+    <title ng-bind="title"></title>	
   </head>
   <body>
 
     <a href="#!/">Home</a> |
     <a href="#!/Request">Request</a> |
     <a href="#!/Schedule">Schedule</a>
-
-    <div ng-view></div>
+	
+	<div ng-view></div>
 	
 	<!-- inject-vendor:js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
@@ -21,8 +21,19 @@
 	
 	<!-- inject:js -->
     <!-- Bootstrapping -->
-    <script src="app.js"></script>
+    <script src="app.module.js"></script>
 	
-	
+	<!-- Reusable Blocks/Modules -->
+    <script src="router/router.module.js"></script>
+    <script src="router/routehelper.js"></script>
+
+    <!-- core module -->
+    <script src="core/core.module.js"></script>
+    <script src="core/config.js"></script>
+
+    <!-- pages module -->
+    <script src="pages/pages.module.js"></script>
+    <script src="pages/config.route.js"></script>
+    <script src="pages/pages.js"></script>
   </body>
 </html>

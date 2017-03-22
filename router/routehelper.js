@@ -10,6 +10,7 @@
 
     // Must configure via the routehelperConfigProvider
     function routehelperConfig() {
+		
         /* jshint validthis:true */
         this.config = {
             // These are the properties we need to set
@@ -26,6 +27,7 @@
     }
 
     function routehelper($location, $rootScope, $route, routehelperConfig) {
+		
         var handlingRouteChangeError = false;
         var routeCounts = {
             errors: 0,
@@ -68,7 +70,7 @@
                     var destination = (current && (current.title || current.name || current.loadedTemplateUrl)) ||
                         'unknown target';
                     var msg = 'Error routing to ' + destination + '. ' + (rejection.msg || '');
-                    console.warning({msg, [current]});
+                    console.warn({msg, current});
                     $location.path('/');
                 }
             );
@@ -79,7 +81,7 @@
             updateDocTitle();
         }
 
-        function getRoutes() {
+        function getRoutes() {			
             for (var prop in $route.routes) {
                 if ($route.routes.hasOwnProperty(prop)) {
                     var route = $route.routes[prop];
